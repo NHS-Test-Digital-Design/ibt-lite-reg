@@ -1,0 +1,38 @@
+{% set pageTitle = "Do you agree to take part in the study?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    {# TODO add next url in #}
+    <form class="form" action="/ukhsa-study-answer" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "ukhsa-study-consent",
+            name: "ukhsa-study-consent",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes, I have read and understood the study information and agree to take part"
+                },
+                {
+                    value: "no",
+                    text: "No, I do not wish to take part in the study"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}

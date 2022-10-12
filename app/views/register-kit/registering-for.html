@@ -1,0 +1,38 @@
+{% set pageTitle = "Who are you registering a test for?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    {# TODO add next url in #}
+    <form class="form" action="/registering-for-answer" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "registering-for",
+            name: "registering-for",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                    value: "myself",
+                    text: "Myself"
+                },
+                {
+                    value: "someone-else",
+                    text: "Someone else"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}

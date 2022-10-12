@@ -1,0 +1,38 @@
+{% set pageTitle = "Is the test part of a study for the UK Health Security Agency (UKHSA)?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    {# TODO add next url in #}
+    <form class="form" action="/ukhsa-study-answer" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "ukhsa-study",
+            name: "ukhsa-study",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}
