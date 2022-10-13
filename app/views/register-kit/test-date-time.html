@@ -1,0 +1,97 @@
+{% set pageTitle = "Date and time of the coronavirus test" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        Select the date and time you'll take your coronavirus test. If you've already taken the coronavirus test, tell us the date and time you took it. 
+    </p>
+
+    <p class="govuk-body">
+        We need to know this so the lab can work out when the test is due to expire. Selecting the wrong date and time could mean you getting an incorrect result. 
+    </p>
+
+    <p class="govuk-body">
+        If you’re posting your completed test kit at a Royal Mail priority postbox, do this no later than 1 hour before the last collection. 
+    </p>
+
+    <form class="form" action="/registering-for-answer" method="post">
+    {{ govukRadios({
+        idPrefix: "test-date",
+        name: "test-date",
+        fieldset: {
+            legend: {
+                text: "Select the date of the test",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+                value: "yesterday",
+                text: "Yesterday, 12 October 2022 "
+            },
+            {
+                value: "today",
+                text: "Today, 13 October 2022 "
+            },
+            {
+                value: "tomorrow",
+                text: "Tomorrow, 14 October 2022 "
+            },
+            {
+                value: "different",
+                text: "A different date"
+            }
+        ]
+    }) }}
+
+    {{ govukInput({
+        id: "test-time-hour",
+        name: "test-time-hour",
+        classes: "govuk-input--width-2",
+        label: {
+            text: "Enter a time",
+            classes: "govuk-label--m"
+        },
+        hint: {
+            text: "For example, enter 9 then select am or pm "
+        }
+    }) }}
+    
+
+    {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "test-time-am-pm",
+        name: "test-time-am-pm",
+        fieldset: {
+        },
+        items: [
+            {
+                value: "am",
+                text: "am"
+            },
+            {
+                value: "pm",
+                text: "pm"
+            }
+        ]
+    }) }}
+
+    {# https://design-system.service.gov.uk/components/button/ #}
+    {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-4",
+        href: "#"
+    }) }}
+
+    </form>
+
+
+
+
+
+{% endblock %}

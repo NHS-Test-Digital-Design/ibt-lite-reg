@@ -1,0 +1,38 @@
+{% set pageTitle = "where are you taking the test" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    {# TODO add next url in #}
+    <form class="form" action="/test-location-answer" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "test-location",
+            name: "tets-location",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                    value: "test-site",
+                    text: "At a test site, government quarantine hotel, or in accommodation as part of an event/conference "
+                },
+                {
+                    value: "home",
+                    text: "At home or an accommodation of their choice"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}

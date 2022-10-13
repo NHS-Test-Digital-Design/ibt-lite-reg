@@ -1,0 +1,82 @@
+{% set pageTitle = "Confirm the test or event site" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-8",
+        rows: [
+            {
+                key: {
+                    text: "Test or event site ID"
+                },
+                value: {
+                    text: "THGR"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "Item URL",
+                            text: "Change",
+                            visuallyHiddenText: "Test or event site ID"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+    <ul class="govuk-list govuk-!-margin-bottom-8">
+        <li class="govuk-heading-s">
+            The Grand
+        </li>
+        <li>
+            Greythorn Drive 
+        </li>
+        <li>
+            Nottingham 
+        </li>
+        <li>
+            NG2 7GG
+        </li>
+        <li>
+            West Bridgford 
+        </li>
+    </ul>
+
+    <form class="form" action="/registering-for-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "site-correct",
+            name: "site-correct",
+            fieldset: {
+                legend: {
+                    text: "Is this correct?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes, this is correct"
+                },
+                {
+                    value: "no",
+                    text: "No, this is not correct"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+    </form>
+
+{% endblock %}
