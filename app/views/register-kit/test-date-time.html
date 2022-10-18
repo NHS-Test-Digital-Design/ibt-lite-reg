@@ -19,74 +19,74 @@
     </p>
 
     <form class="form" action="/registering-for-answer" method="post">
-    {{ govukRadios({
-        idPrefix: "test-date",
-        name: "test-date",
-        fieldset: {
-            legend: {
-                text: "Select the date of the test",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-            }
-        },
-        items: [
-            {
-                value: "yesterday",
-                text: "Yesterday, 12 October 2022 "
+        {{ govukRadios({
+            idPrefix: "test-date",
+            name: "test-date",
+            fieldset: {
+                legend: {
+                    text: "Select the date of the test",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                }
             },
-            {
-                value: "today",
-                text: "Today, 13 October 2022 "
-            },
-            {
-                value: "tomorrow",
-                text: "Tomorrow, 14 October 2022 "
-            },
-            {
-                value: "different",
-                text: "A different date"
-            }
-        ]
-    }) }}
+            items: [
+                {
+                    value: "yesterday",
+                    text: "Yesterday, 12 October 2022 "
+                },
+                {
+                    value: "today",
+                    text: "Today, 13 October 2022 "
+                },
+                {
+                    value: "tomorrow",
+                    text: "Tomorrow, 14 October 2022 "
+                },
+                {
+                    value: "different",
+                    text: "A different date"
+                }
+            ]
+        }) }}
 
-    {{ govukInput({
-        id: "test-time-hour",
-        name: "test-time-hour",
-        classes: "govuk-input--width-2",
-        label: {
-            text: "Enter a time",
-            classes: "govuk-label--m"
-        },
-        hint: {
-            text: "For example, enter 9 then select am or pm "
-        }
-    }) }}
-    
-
-    {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "test-time-am-pm",
-        name: "test-time-am-pm",
-        fieldset: {
-        },
-        items: [
-            {
-                value: "am",
-                text: "am"
+        {{ govukInput({
+            id: "test-time-hour",
+            name: "test-time-hour",
+            classes: "govuk-input--width-2",
+            label: {
+                text: "Enter a time",
+                classes: "govuk-label--m"
             },
-            {
-                value: "pm",
-                text: "pm"
+            hint: {
+                text: "For example, enter 9 then select am or pm "
             }
-        ]
-    }) }}
+        }) }}
+        
 
-    {# https://design-system.service.gov.uk/components/button/ #}
-    {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-top-4",
-        href: "#"
-    }) }}
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "test-time-am-pm",
+            name: "test-time-am-pm",
+            fieldset: {
+            },
+            items: [
+                {
+                    value: "am",
+                    text: "am"
+                },
+                {
+                    value: "pm",
+                    text: "pm"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
 
     </form>
 

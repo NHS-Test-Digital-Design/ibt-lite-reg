@@ -1,0 +1,44 @@
+{% set pageTitle = "Did you visit a red list country in the 10 days before arriving in the UK? " %}
+{% extends "layout_service_step.html" %}
+
+{% set hintText %}
+    <p class="govuk-body">
+        Find out if countries are on the <a href="https://www.gov.uk/guidance/travel-to-england-from-another-country-during-coronavirus-covid-19" class="govuk-link" rel="noreferrer noopener" target="_blank">red list (opens in new tab)</a>.
+    </p>
+{% endset %}
+
+{% block content %}
+    <form class="form" action="/registering-for-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "red-list",
+            name: "red-list",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                html: hintText
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes, I've been to a red country "
+                },
+                {
+                    value: "no",
+                    text: "No, I have not been to a red country "
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+    </form>
+{% endblock %}
