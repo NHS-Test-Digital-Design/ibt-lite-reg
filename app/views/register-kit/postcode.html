@@ -1,0 +1,50 @@
+{% set pageTitle = "What is your home address in the UK?" %}
+{% extends "layout_service_step.html" %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back"
+  }) }}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+
+<h1 class="govuk-heading-l">
+    {{ pageTitle }}
+</h1>
+
+  <p>
+    If you do not have home address in the UK, use the address where you're staying while you're in the UK.
+  </p>
+
+    <form action="/form-handler" method="post" novalidate>
+      {{ govukInput({
+
+        hint: {
+            text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "home-postcode",
+        name: "home-postcode",
+        autocomplete: "postal-code"
+      }) }}
+
+      <p>
+        <a href="/register-kit/address/home-address-manual" target="_parent"> Enter address manually</a>
+      </p>
+
+
+      {{ govukButton({
+          text: "Find address",
+          classes: "govuk-!-margin-top-4",
+          href: "/register-kit/address/home-address-select"
+      }) }}
+
+
+    </form>
+  </div>
+
+{% endblock %}

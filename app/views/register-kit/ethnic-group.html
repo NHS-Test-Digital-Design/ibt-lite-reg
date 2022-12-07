@@ -2,7 +2,7 @@
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form action="ethnic-background" class="form" method="post">
+    <form action="#" class="form" method="post">
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
             idPrefix: "ethnic-group",
@@ -66,7 +66,8 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4"
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/ethnic-background"
         }) }}
 
 

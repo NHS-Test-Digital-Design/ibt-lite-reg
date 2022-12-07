@@ -34,7 +34,7 @@
     {% endset %}
 
     <form action="#" method="post">
-        
+
         {{ govukRadios({
             idPrefix: "date-of-onset",
             name: "date-of-onset",
@@ -91,10 +91,13 @@
             ]
         }) }}
 
+        {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4"
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/tested-positive-before"
         }) }}
-        
+
+
     </form>
 {% endblock %}

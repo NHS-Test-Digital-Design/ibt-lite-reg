@@ -1,0 +1,72 @@
+{% set pageTitle = "Email address" %}
+{% extends "layout_service_step.html" %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+      <p class="govuk-body">
+        We need an email address to send your test results. Use one you'll have access to later.
+      </p>
+
+      <p class="govuk-body">
+        If you're getting a test for a child, enter your email not theirs.
+      </p>
+
+      <p class="govuk-body">
+        If your mobile number is going to change soon, it's important you give us an email address, as it's the only way to get your test results.
+      </p>
+
+
+      <form action="/form-handler" method="post" novalidate>
+        {{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Do you have an email address where you can get the test results?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
+    {# https://design-system.service.gov.uk/components/button/ #}
+    {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-4",
+        href: "/register-kit/mobile-number"
+    }) }}
+
+      </form>
+
+
+{% endblock %}
