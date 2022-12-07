@@ -1,0 +1,38 @@
+{% set pageTitle = "If you're eligible for COVID-19 treatments and have symptom" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <h1 class="govuk-heading-l">
+          {{ pageTitle }}
+      </h1>
+      <p class="govuk-body">
+        If you have a free rapid lateral flow test:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          take it now instead of the PCR test, as you'll get the result quicker
+        </li>
+        <li>
+          <a href="#" class="govuk-link" rel="noreferrer noopener" target="_parent">report the rapid lateral flow test result on GOV.UK</a>
+        </li>
+      </ul>
+
+      <p>If you only have a PCR test, continue to register and return the test.</p>
+
+      {# https://design-system.service.gov.uk/components/button/ #}
+      {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-4",
+          href: "/register-kit/registering-for"
+      }) }}
+
+
+
+    </div>
+  
+
+{% endblock %}
