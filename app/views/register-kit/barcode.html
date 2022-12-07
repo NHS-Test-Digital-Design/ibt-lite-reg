@@ -12,15 +12,15 @@
     </h1>
 
     <p class="govuk-body">
-        Use the camera on your phone or computer to scan the test kit barcode. You’ll find these barcodes attached to the plastic tube, plastic bag and return box in the test kit. 
+        Use the camera on your phone or computer to scan the test kit barcode. You’ll find these barcodes attached to the plastic tube, plastic bag and return box in the test kit.
     </p>
 
     <p class="govuk-body">
-        These are different from the pre-paid Royal Mail return package barcode on your box. 
+        These are different from the pre-paid Royal Mail return package barcode on your box.
     </p>
 
     <p class="govuk-body">
-        Or you can manually enter the 11 character reference below it. 
+        Or you can manually enter the 11 character reference below it.
     </p>
 
     {# https://design-system.service.gov.uk/components/details/ #}
@@ -50,7 +50,7 @@
             id: "confirmBarcodeRef",
             name: "confirmBarcodeRef",
             label: {
-                text: "Conform test kit barcode reference "
+                text: "Confirm test kit barcode reference "
             }
         }) }}
 
@@ -58,9 +58,9 @@
         {{ govukButton({
             text: "Continue",
             classes: "govuk-!-margin-top-4",
-            href: "ukhsa-study"
+            href: "/register-kit/royal-mail-barcode"
         }) }}
-        
+
     </form>
 
 {% endblock %}
