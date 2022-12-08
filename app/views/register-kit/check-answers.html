@@ -9,6 +9,54 @@
 
 
     <h2 class="govuk-heading-m">
+        Test registration details
+    </h2>
+
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+            {
+                key: {
+                    text: "Test kit barcode reference"
+                },
+                value: {
+                    text: "CHE01010101"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "Change test kit barcode reference"
+                        }
+                    ]
+                }
+            },
+
+            {
+                key: {
+                    text: "Royal mail barcode reference"
+                },
+                value: {
+                    text: "JD95064320101"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "Change royal mail barcode reference"
+                        }
+                    ]
+                }
+            }
+
+        ]
+    }) }}
+
+
+
+    <h2 class="govuk-heading-m">
         Personal details
     </h2>
     <p class="govuk-body">
@@ -190,97 +238,6 @@
         ]
     }) }}
 
-    <h2 class="govuk-heading-m">
-        Employment and education
-    </h2>
-    <p class="govuk-body">
-        If your test is positive, we may use this information for contact tracing.
-    </p>
-    {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-9",
-        rows: [
-            {
-                key: {
-                    text: "Travel to nursery, work or place of education"
-                },
-                value: {
-                    text: "No"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "change travel to nursery, work or place of education"
-                        }
-                    ]
-                }
-            }
-        ]
-    }) }}
-
-    <h2 class="govuk-heading-m">
-        Vaccine and travel history
-    </h2>
-    <p class="govuk-body">
-        We may use this information to monitor new coronavirus variants.
-    </p>
-    {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-9",
-        rows: [
-            {
-                key: {
-                    text: "Positive coronavirus test "
-                },
-                value: {
-                    text: "No"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "change positive test history"
-                        }
-                    ]
-                }
-            },
-            {
-                key: {
-                    text: "Coronavirus vaccine"
-                },
-                value: {
-                    text: "No"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "change coronavirus vaccine"
-                        }
-                    ]
-                }
-            },
-            {
-                key: {
-                    text: "Travelled overseas"
-                },
-                value: {
-                    text: "No"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "change overseas travel"
-                        }
-                    ]
-                }
-            }
-        ]
-    }) }}
 
     {# https://design-system.service.gov.uk/components/button/ #}
     {{ govukButton({
