@@ -29,43 +29,58 @@
         If your mobile number is going to change soon, it's important you give us an email address, as it's the only way to get your test results.
       </p>
 
+      <h2 class="govuk-body" style="font-weight:bold;">Do you have an email address where you can get the test results?</h2>
 
       <form action="/form-handler" method="post" novalidate>
+        {% set emailInput %}
+            {{ govukInput({
+                id: "email",
+                name: "email",
+                classes: "govuk-!-width-one-half",
+                type: "email",
+                autocomplete: "email",
+                spellcheck: false,
+                label: {
+                    text: "Email address"
+                }
+            }) }}
+            {{ govukInput({
+                id: "confirmEmail",
+                name: "confirmEemail",
+                classes: "govuk-!-width-one-half",
+                type: "email",
+                autocomplete: "email",
+                spellcheck: false,
+                label: {
+                    text: "Confirm email address"
+                }
+            }) }}
+        {% endset %}
+
         {{ govukRadios({
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Do you have an email address where you can get the test results?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
+            idPrefix: "hasEmail",
+            name: "hasEmail",
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes, I have an email addess where I can get the results",
+                    conditional: {
+                        html: emailInput
+                    }
+                },
+                {
+                    value: "no",
+                    text: "No, I do not have an email address"
+                }
+            ]
+        }) }}
 
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: emailHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No",
-      conditional: {
-        html: phoneHtml
-      }
-    }
-  ]
-}) }}
-
-    {# https://design-system.service.gov.uk/components/button/ #}
-    {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-top-4",
-        href: "/register-kit/mobile-number"
-    }) }}
-
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/mobile-number"
+        }) }}
       </form>
 
 
