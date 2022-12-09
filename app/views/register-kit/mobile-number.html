@@ -29,43 +29,39 @@
         If your mobile number is going to change soon, it's important you give us an email address, to make sure you get your test results.
       </p>
 
+      <h2 class="govuk-body" style="font-weight:bold;">Do you have a mobile number where you can get the test results?</h2>
 
       <form action="/form-handler" method="post" novalidate>
-        {{ govukRadios({
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Do you have a mobile number where you can get the test results?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
 
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: emailHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No",
-      conditional: {
-        html: phoneHtml
-      }
-    }
-  ]
-}) }}
 
-    {# https://design-system.service.gov.uk/components/button/ #}
-    {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-top-4",
-        href: "/register-kit/nhs-number"
-    }) }}
+            {{ govukInput({
+            label: {
+              text: "Mobile number"
+            },
+            classes: "govuk-input--width-10",
+            id: "width-10",
+            name: "width-10",
+            hint: {
+                text: "For international numbers include the country code (+33)"
+              }
+          }) }}
 
+          {{ govukInput({
+          label: {
+            text: "Confirm mobile number"
+          },
+          classes: "govuk-input--width-10",
+          id: "width-10",
+          name: "width-10"
+
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/nhs-number"
+        }) }}
       </form>
 
 
