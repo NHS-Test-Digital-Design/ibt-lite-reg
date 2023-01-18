@@ -1,7 +1,8 @@
-{% set pageTitle = "Did you travel to any countries outside the UK and Ireland within the last 14 days? " %}
+{% set pageTitle = "Did you spend time in any countries outside the UK and Ireland within the last 14 days?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
+    {# TODO add next url in #}
     <form class="form" action="/travel-answer" method="post">
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
@@ -20,11 +21,11 @@
             items: [
                 {
                     value: "yes",
-                    text: "Yes, I travelled overseas"
+                    text: "Yes"
                 },
                 {
                     value: "no",
-                    text: "No, I did not travel overseas"
+                    text: "No"
                 }
             ]
         }) }}

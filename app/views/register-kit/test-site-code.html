@@ -1,4 +1,4 @@
-{% set pageTitle = "What's the test site ID or event ID? " %}
+{% set pageTitle = "What is the test site or event ID?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
@@ -8,19 +8,11 @@
     </h1>
 
     <p class="govuk-body">
-        The test site ID will be either 3 or 4 characters. 
+        The ID will be 3 or 4 characters.
     </p>
 
     <p class="govuk-body">
-        If you're isolating after international travel, the test site is your government quarantine hotel. 
-    </p>
-
-    <p class="govuk-body">
-        If you're taking your test as part of an event or conference, use the event ID. 
-    </p>
-
-    <p class="govuk-body">
-        If you cannot find the ID, ask a member of staff.
+        If you cannot find it, ask a member of staff.
     </p>
 
     <form class="form" action="/registering-for-answer" method="post">
@@ -40,7 +32,7 @@
         {{ govukButton({
             text: "Continue",
             classes: "govuk-!-margin-top-4",
-            href: "#"
+            href: "/register-kit/test-site-confirmation"
         }) }}
 
     </form>

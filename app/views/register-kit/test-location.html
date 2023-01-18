@@ -1,4 +1,4 @@
-{% set pageTitle = "where are you taking the test" %}
+{% set pageTitle = "Are you taking your test at a test site?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
@@ -7,7 +7,7 @@
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
             idPrefix: "test-location",
-            name: "tets-location",
+            name: "test-location",
             fieldset: {
                 legend: {
                     text: pageTitle,
@@ -15,14 +15,18 @@
                     classes: "govuk-fieldset__legend--l"
                 }
             },
+            hint: {
+                text: "Test sites include airports, government quarantine hotels or accommodation as part of an event or conference."
+            },
+
             items: [
                 {
-                    value: "test-site",
-                    text: "At a test site, government quarantine hotel, or in accommodation as part of an event/conference "
+                    value: "yes",
+                    text: "Yes"
                 },
                 {
-                    value: "home",
-                    text: "At home or an accommodation of their choice"
+                    value: "no",
+                    text: "No"
                 }
             ]
         }) }}
