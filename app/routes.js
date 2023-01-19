@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// registering-for.html routing.
+// registering-for.html routing
 router.post('/registering-for-answer', function (req, res) {
     var whoFor = req.session.data['registering-for']
     if (whoFor == "someone-else"){
@@ -13,18 +13,17 @@ router.post('/registering-for-answer', function (req, res) {
     }
 })
 
-
-// travel-overseas.html routing.
-router.post('/travel-answer', function (req, res) {
-    var travelFor = req.session.data['travel-overseas']
-    if (travelFor == "no"){
+// travel-overseas.html routing
+router.post('/overseas-answer', function (req, res) {
+    var travelWhere = req.session.data['travel-overseas']
+    if (travelWhere == "no"){
         res.redirect('register-kit/test-location')
     } else {
         res.redirect('register-kit/travel-country')
     }
 })
 
-// travel-location.html routing.
+// travel-location.html routing
 router.post('/test-location-answer', function (req, res) {
     var travelFor = req.session.data['test-location']
     if (travelFor == "no"){
