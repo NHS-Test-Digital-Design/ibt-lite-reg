@@ -1,7 +1,8 @@
 {% set pageTitle = "Do you travel to nursery, work or a place of education?" %}
 {% extends "layout_service_step.html" %}
 
-    <form class="form" action="/registering-for-answer" method="post">
+{% block content %}
+    <form class="form" action="/travel-workplace" method="post">
 
         {{ govukRadios({
             idPrefix: "travel-work-education",
@@ -42,8 +43,7 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "#"
+            classes: "govuk-!-margin-top-4"
         }) }}
 
 

@@ -48,7 +48,6 @@
         }]
     %}
 
-
 {% elif data['ethnic-group'] === "black" %}
     {% set radioItems = [
         {
@@ -154,7 +153,8 @@
         {{ govukButton({
             text: "Continue",
             classes: "govuk-!-margin-top-4",
-            href: "/register-kit/symptoms"
+            href: "/register-kit/travel-work-education"
         }) }}
     </form>
+
 {% endblock %}

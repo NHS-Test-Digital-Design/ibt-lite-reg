@@ -7,10 +7,6 @@
         {{ pageTitle }}
     </h1>
 
-    <p class="govuk-body">
-        This will help us learn about the type of places where the virus spreads. It will also help contact tracers.
-    </p>
-
     <form class="form" action="/registering-for-answer" method="post">
         {{ govukInput({
             id: "education-name",
@@ -28,17 +24,17 @@
                 text: "Town"
             }
         }) }}
-        
+
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
             classes: "govuk-!-margin-top-4",
-            href: "#"
+            href: "/register-kit/symptoms"
         }) }}
     </form>
 
     <p class="govuk-body">
-        <a href="#" class="govuk-link">Prefer not to say</a>
-    </p>    
+        <a href="/register-kit/symptoms" class="govuk-link">Prefer not to say</a>
+    </p>
 
 {% endblock %}

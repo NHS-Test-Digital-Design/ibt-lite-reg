@@ -25,13 +25,51 @@ router.post('/overseas-answer', function (req, res) {
 
 // travel-location.html routing
 router.post('/test-location-answer', function (req, res) {
-    var travelFor = req.session.data['test-location']
-    if (travelFor == "no"){
-        res.redirect('register-kit/test-site-code')
+    var testWhere = req.session.data['test-location']
+    if (testWhere == "no"){
+        res.redirect('register-kit/royal-mail-barcode')
     } else {
         res.redirect('register-kit/test-site-code')
     }
 })
+
+// confirm-testsite.html routing
+router.post('/register-answer', function (req, res) {
+    var registerConfirm = req.session.data['test-site-confirmation']
+    if (registerConfirm == "no"){
+        res.redirect('register-kit/test-site-code')
+    } else {
+        res.redirect('register-kit/royal-mail-barcode')
+    }
+})
+
+// travel-work-education.html routing
+router.post('/travel-workplace', function (req, res) {
+    var travelTo = req.session.data['travel-work-education']
+    if (travelTo == "yes-work"){
+        res.redirect('register-kit/area-of-work')
+    }
+    if (travelTo == "yes-education"){
+        res.redirect('register-kit/education-place')
+    }
+    if (travelTo == "no"){
+        res.redirect('register-kit/symptoms')
+    }
+    else {
+        res.redirect('register-kit/symptoms')
+    }
+})
+
+// education-place.html routing
+router.post('/education-place-answer', function (req, res) {
+    var whichPlace = req.session.data['education-place']
+    if (whichPlace == "not-say"){
+        res.redirect('register-kit/symptoms')
+    } else {
+        res.redirect('register-kit/education-place-details')
+    }
+})
+
 
 
 

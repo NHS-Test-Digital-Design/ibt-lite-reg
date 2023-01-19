@@ -48,35 +48,37 @@
         </li>
     </ul>
 
-    <form class="form" action="/registering-for-answer" method="post">
-        {{ govukRadios({
-            idPrefix: "site-correct",
-            name: "site-correct",
-            fieldset: {
-                legend: {
-                    text: "Is this correct?",
-                    isPageHeading: false,
-                    classes: "govuk-fieldset__legend--m"
-                }
+{# TODO add next url in #}
+<form class="form" action="/register-answer" method="post">
+    {# https://design-system.service.gov.uk/components/radios/ #}
+    {{ govukRadios({
+        idPrefix: "test-site-confirmation",
+        name: "test-site-confirmation",
+        fieldset: {
+            legend: {
+                text: "Is this correct?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+                value: "yes",
+                text: "Yes, this is correct"
             },
-            items: [
-                {
-                    value: "yes",
-                    text: "Yes, this is correct"
-                },
-                {
-                    value: "no",
-                    text: "No, this is not correct"
-                }
-            ]
-        }) }}
+            {
+                value: "no",
+                text: "No, this is not correct"
+            }
+        ]
+    }) }}
 
-        {# https://design-system.service.gov.uk/components/button/ #}
-        {{ govukButton({
-            text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "/register-kit/royal-mail-barcode"
-        }) }}
-    </form>
+    {# https://design-system.service.gov.uk/components/button/ #}
+    {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+
+</form>
 
 {% endblock %}
