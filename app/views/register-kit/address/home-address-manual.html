@@ -1,4 +1,4 @@
-{% set pageTitle = "Enter your home address in the UK?" %}
+{% set pageTitle = "Enter your home address in the UK" %}
 {% extends "layout_service_step.html" %}
 
 
@@ -14,6 +14,7 @@
         {{ govukInput({
             id: "addressLine1",
             name: "addressLine1",
+
             autocomplete: "address-line1",
             label: {
                 text: "Buiding and street"
@@ -22,6 +23,7 @@
         {{ govukInput({
             id: "addressLine2",
             name: "addressLine2",
+
             autocomplete: "address-line2",
             label: {
                 text: "Building and street line 2 of 2",
@@ -31,7 +33,7 @@
         {{ govukInput({
             id: "addressTown",
             name: "addressTown",
-            classes: "govuk-input--width-10",
+              classes: "govuk-input--width-20",
             label: {
                 text: "Town or city"
             }
@@ -39,7 +41,7 @@
         {{ govukInput({
             id: "addressPostcode",
             name: "addressPostcode",
-            classes: "govuk-input--width-10",
+            classes: "govuk-input--width-20",
             label: {
                 text: "Postcode"
             }

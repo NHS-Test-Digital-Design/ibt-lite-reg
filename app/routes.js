@@ -70,6 +70,16 @@ router.post('/education-place-answer', function (req, res) {
     }
 })
 
+// GP-address.html routing
+router.post('/gp-address', function (req, res) {
+    var confirmGP = req.session.data['confirmGpAddress']
+    if (confirmGP == "no"){
+        res.redirect('register-kit/address/gp-address-postcode')
+    } else {
+        res.redirect('register-kit/email-address')
+    }
+})
+
 
 
 

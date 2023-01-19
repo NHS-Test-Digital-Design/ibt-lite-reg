@@ -5,9 +5,13 @@
 
 {% block content %}
 
-    <h1 class="govuk-heading-l  govuk-!-margin-bottom-8">
+    <h1 class="govuk-heading-l  govuk-!-margin-bottom-4">
         {{ pageTitle }}
     </h1>
+
+    <p>
+      If you do not have home address in the UK, use the address where you're staying while you're in the UK.
+    </p>
 
     {# https://design-system.service.gov.uk/components/summary-list/ #}
     {{ govukSummaryList({
@@ -38,6 +42,7 @@
         {{ govukSelect({
             id: "selectHomeAddress",
             name: "selectHomeAddress",
+            
             label: {
                 text: "Select an address"
             },

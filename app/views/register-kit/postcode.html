@@ -1,16 +1,8 @@
 {% set pageTitle = "What is your home address in the UK?" %}
 {% extends "layout_service_step.html" %}
 
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back"
-  }) }}
-{% endblock %}
+
 {% block content %}
-<div class="govuk-grid-row">
 
 <h1 class="govuk-heading-l">
     {{ pageTitle }}
@@ -33,9 +25,8 @@
       }) }}
 
       <p>
-        <a href="/register-kit/address/home-address-manual" target="_parent"> Enter address manually</a>
+        <a href="/register-kit/address/home-address-manual" target="_parent" class="govuk-link"> Enter address manually</a>
       </p>
-
 
       {{ govukButton({
           text: "Find address",
@@ -44,7 +35,14 @@
       }) }}
 
 
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "If you donot have a fixed address",
+          text: "You can use the postcode of nearby reference address ch as your GP.
+          You can also call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm."
+        }) }}
+
     </form>
-  </div>
+
 
 {% endblock %}

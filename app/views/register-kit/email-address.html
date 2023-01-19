@@ -1,16 +1,6 @@
 {% set pageTitle = "Email address" %}
 {% extends "layout_service_step.html" %}
 
-
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
     <h1 class="govuk-heading-l">
@@ -18,7 +8,7 @@
     </h1>
 
       <p class="govuk-body">
-        We need an email address to send your test results. Use one you'll have access to later.
+        We need an email address to send your test results to. Use one you'll have access to later.
       </p>
 
       <p class="govuk-body">
@@ -26,7 +16,7 @@
       </p>
 
       <p class="govuk-body">
-        If your mobile number is going to change soon, it's important you give us an email address, as it's the only way to get your test results.
+        If your mobile number is going to change soon, it's important you give us an email address, as it's the only other way to get your test results.
       </p>
 
       <h2 class="govuk-body" style="font-weight:bold;">Do you have an email address where you can get the test results?</h2>

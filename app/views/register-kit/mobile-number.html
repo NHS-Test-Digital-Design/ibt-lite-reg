@@ -2,15 +2,6 @@
 {% extends "layout_service_step.html" %}
 
 
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
     <h1 class="govuk-heading-l">
@@ -18,50 +9,38 @@
     </h1>
 
       <p class="govuk-body">
-        We need a mobile number to send your test results.
+        We need a mobile number to send your test results to. Use one you'll have access to later.
       </p>
 
       <p class="govuk-body">
         If you're getting a test for a child, enter your number not theirs.
       </p>
 
-      <p class="govuk-body">
-        If your mobile number is going to change soon, it's important you give us an email address, to make sure you get your test results.
-      </p>
-
-      <h2 class="govuk-body" style="font-weight:bold;">Do you have a mobile number where you can get the test results?</h2>
-
       <form action="/form-handler" method="post" novalidate>
 
 
-            {{ govukInput({
-            label: {
-              text: "Mobile number"
-            },
-            classes: "govuk-input--width-10",
-            id: "width-10",
-            name: "width-10",
-            hint: {
-                text: "For international numbers include the country code (+33)"
-              }
-          }) }}
-
+        {% from "govuk/components/input/macro.njk" import govukInput %}
           {{ govukInput({
           label: {
-            text: "Confirm mobile number"
+            text: "Mobile number"
           },
-          classes: "govuk-input--width-10",
-          id: "width-10",
-          name: "width-10"
-
-        }) }}
+          hint: {
+            text: "For international numbers include the country code"
+          },
+          id: "mobile-number",
+          name: "mobile-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+          }) }}
 
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
             classes: "govuk-!-margin-top-4",
-            href: "/register-kit/nhs-number"
+            href: "/register-kit/landline"
         }) }}
+
       </form>
 
 
