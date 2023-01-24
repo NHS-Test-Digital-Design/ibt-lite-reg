@@ -1,13 +1,25 @@
-{% set pageTitle = "What is the address registered with your GP?" %}
+{% set pageTitle = "What is your address?" %}
 {% extends "layout_service_step.html" %}
 
 {% set code = data['gpPostcode'] or 'NH48 1SD' %}
 
 {% block content %}
 
-    <h1 class="govuk-heading-l  govuk-!-margin-bottom-8">
+    <h1 class="govuk-heading-l">
         {{ pageTitle }}
     </h1>
+
+    <p class="govuk-body govuk-!-font-weight-bold">
+        Use the address registered with your GP.
+    </p>
+
+    <p class="govuk-body">
+        This will help us find and update your GP record with your test result.
+    </p>
+
+    <p class="govuk-body">
+        If you're not registered with a GP in the UK, use the address where you're staying.
+    </p>
 
     {# https://design-system.service.gov.uk/components/summary-list/ #}
     {{ govukSummaryList({

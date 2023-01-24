@@ -80,6 +80,17 @@ router.post('/gp-address', function (req, res) {
     }
 })
 
+// symptoms.html routing
+router.post('/when-did-symptoms-start', function (req, res) {
+    var symptomsStart = req.session.data['do-you-have-symptoms']
+    if (symptomsStart == "no"){
+        res.redirect('register-kit/symptoms-none')
+    } else {
+        res.redirect('/register-kit/when-did-symptoms-start')
+    }
+})
+
+
 
 
 

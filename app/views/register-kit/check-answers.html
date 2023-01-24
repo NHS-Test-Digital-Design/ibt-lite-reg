@@ -160,7 +160,7 @@
                     text: "Contact details"
                 },
                 value: {
-                    html: "<p class='govuk-body'>your@email.com</p><p class='govuk-body'>07766 554321</p>"
+                    html: "<p class='govuk-body'>your@email.com</p><p class='govuk-body'>07766 554321</p><p class='govuk-body'>I do not have landline number</p>"
                 },
                 actions: {
                     items: [
@@ -270,6 +270,98 @@
                             href: "#",
                             text: "Change",
                             visuallyHiddenText: "change NHS number"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+
+    <h2 class="govuk-heading-m">
+        Employment and education
+    </h2>
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+            {
+                key: {
+                    text: "Travel to nursery, work or place of education"
+                },
+                value: {
+                    text: "No"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change travel to nursery, work or place of education"
+                        }
+                    ]
+                }
+            },
+
+            {
+                key: {
+                    text: "Place of study or work"
+                },
+                value: {
+                    text: "Teaching"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change place of study or work"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+        Vaccine and travel history
+    </h2>
+    <p class="govuk-body">
+        We may use this information to monitor new coronavirus variants.
+    </p>
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+            {
+                key: {
+                    text: "Positive coronavirus test "
+                },
+                value: {
+                    text: "Yes, over 3 months"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change positive test history"
+                        }
+                    ]
+                }
+            },
+
+            {
+                key: {
+                    text: "Travelled overseas"
+                },
+                value: {
+                    text: "Yes to China"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change overseas travel"
                         }
                     ]
                 }

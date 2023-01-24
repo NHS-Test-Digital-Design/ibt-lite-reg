@@ -1,4 +1,4 @@
-{% set pageTitle = "Coronavirus symptoms" %}
+{% set pageTitle = "You can no longer get a freee PCR test" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
@@ -15,35 +15,6 @@
         <a href="https://www.nidirect.gov.uk/articles/symptoms-respiratory-infections-including-covid-19 class="govuk-link" rel="noreferrer noopener" target="_blank">Northern Ireland: symptoms guidance</a><br>
     </p>
 
-    <form class="form" action="/when-did-symptoms-start" method="post">
-        {{ govukRadios({
-            idPrefix: "do-you-have-symptoms",
-            name: "do-you-have-symptoms",
-            classes: "govuk-!-margin-top-5",
-            fieldset: {
-                legend: {
-                    text: "Do you currrently have any coronavirus symptoms?",
-                    isPageHeading: false,
-                    classes: "govuk-label govuk-label--s"
-                }
-            },
-            items: [
-                {
-                    value: "yes",
-                    text: "Yes"
-                },
-                {
-                    value: "no",
-                    text: "No"
-                }
-            ]
-        }) }}
+      <p>If your COVID-19 symptoms are seriously affectingyour everyday life, call NHS 111 or your GP. In an emergency call 999.</p>
 
-        {# https://design-system.service.gov.uk/components/button/ #}
-        {{ govukButton({
-            text: "Continue",
-            classes: "govuk-!-margin-top-4"
-        }) }}
-
-    </form>
 {% endblock %}

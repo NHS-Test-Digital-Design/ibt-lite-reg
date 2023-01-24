@@ -1,4 +1,4 @@
-{% set pageTitle = "Mobile number" %}
+{% set pageTitle = "What is your mobile number" %}
 {% extends "layout_service_step.html" %}
 
 
@@ -16,6 +16,10 @@
         If you're getting a test for a child, enter your number not theirs.
       </p>
 
+      <p class="govuk-body">
+        If your mobile number is going to change soon it's important you give us an email address, to make sure you get your test results.
+      </p>
+
       <form action="/form-handler" method="post" novalidate>
 
 
@@ -25,7 +29,7 @@
             text: "Mobile number"
           },
           hint: {
-            text: "For international numbers include the country code"
+            text: "For international numbers include the country code (EG,+33)"
           },
           id: "mobile-number",
           name: "mobile-number",
