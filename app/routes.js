@@ -84,7 +84,7 @@ router.post('/gp-address', function (req, res) {
 router.post('/when-did-symptoms-start', function (req, res) {
     var symptomsStart = req.session.data['do-you-have-symptoms']
     if (symptomsStart == "no"){
-        res.redirect('register-kit/symptoms-none')
+        res.redirect('/register-kit/tested-positive-before')
     } else {
         res.redirect('/register-kit/when-did-symptoms-start')
     }
