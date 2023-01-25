@@ -1,0 +1,48 @@
+{% set pageTitle = "Where in the UK does Joe Smith live?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="" method="post">
+        {{ govukRadios({
+            idPrefix: "where-do-you-live",
+            name: "where-do-you-live",
+            fieldset: {
+                legend: {
+                    text:  pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            hint: {
+                text: "If they do not normally live in the UK, select the country where they're staying while they're in the UK."
+            },
+            items: [
+                {
+                    value: "england",
+                    text: "England"
+                },
+                {
+                    value: "scotland",
+                    text: "Scotland"
+                },
+                {
+                    value: "ni",
+                    text: "Northern Ireland"
+                },
+                {
+                    value: "wales",
+                    text: "Wales"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/postcode-for-someone"
+        }) }}
+
+
+    </form>
+{% endblock %}

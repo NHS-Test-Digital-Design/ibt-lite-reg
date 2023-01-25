@@ -1,0 +1,40 @@
+{% set pageTitle = "What is the test site or event ID?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        The ID will be 3 or 4 characters.
+    </p>
+
+    <p class="govuk-body">
+        If they cannot find it, get them to ask a member of staff.
+    </p>
+
+    <form class="form" action="/registering-for-answer" method="post">
+        {{ govukInput({
+            id: "test-site-id",
+            name: "test-site-id",
+            label: {
+                text: "Test site or event ID",
+                classes: "govuk-label--m"
+            },
+            hint: {
+                text: "For example, THGR or LMHL "
+            }
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/test-site-confirmation-other"
+        }) }}
+
+    </form>
+
+{% endblock %}

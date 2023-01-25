@@ -1,14 +1,14 @@
-{% set pageTitle = "Did you spend time in any countries outside the UK and Ireland within the last 14 days?" %}
+{% set pageTitle = "Did the person being registered spend time in any countries outside the UK and Ireland within the last 14 days?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
     {# TODO add next url in #}
-    <form class="form" action="/overseas-answer" method="post">
+    <form class="form" action="/overseas-answer-someone" method="post">
 
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
-            idPrefix: "travel",
-            name: "travel",
+            idPrefix: "travel-overseas-other",
+            name: "travel-overseas-other",
             fieldset: {
                 legend: {
                     text: pageTitle,

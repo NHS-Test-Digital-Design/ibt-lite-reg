@@ -1,0 +1,48 @@
+{% set pageTitle = "What is Joe Smith's home address in the UK?" %}
+{% extends "layout_service_step.html" %}
+
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+    {{ pageTitle }}
+</h1>
+
+  <p>
+    If they do not have home address in the UK, use the address where they're staying while they're in the UK.
+  </p>
+
+    <form action="/form-handler" method="post" novalidate>
+      {{ govukInput({
+
+        hint: {
+            text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "home-postcode",
+        name: "home-postcode",
+        autocomplete: "postal-code"
+      }) }}
+
+      <p>
+        <a href="/register-kit/address/home-address-manual-someone" target="_parent" class="govuk-link"> Enter address manually</a>
+      </p>
+
+      {{ govukButton({
+          text: "Find address",
+          classes: "govuk-!-margin-top-4",
+          href: "/register-kit/address/home-address-select-someone"
+      }) }}
+
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "If they donot have a fixed address",
+          text: "You can use the postcode of nearby reference address ch as your GP.
+          You can also call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm."
+        }) }}
+
+    </form>
+
+
+{% endblock %}

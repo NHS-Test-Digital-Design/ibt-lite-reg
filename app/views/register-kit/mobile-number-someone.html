@@ -1,0 +1,55 @@
+{% set pageTitle = "What is Joe Smith's mobile number" %}
+{% extends "layout_service_step.html" %}
+
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+      <p class="govuk-body">
+        We need a mobile number to send their test results to. Use one they'll have access to later.
+      </p>
+
+      <form action="/form-handler" method="post" novalidate>
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+          {{ govukInput({
+          label: {
+            text: "Mobile number"
+          },
+          hint: {
+            text: "For international numbers include the country code (EG,+33)"
+          },
+          id: "mobile-number",
+          name: "mobile-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+          }) }}
+
+          {{ govukInput({
+          label: {
+            text: "Confirm mobile number"
+          },
+
+          id: "confirm-mobile-number",
+          name: "confirm-mobile-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+          }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/landline-someone"
+        }) }}
+
+      </form>
+
+
+{% endblock %}

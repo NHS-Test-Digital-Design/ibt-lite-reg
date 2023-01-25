@@ -1,9 +1,9 @@
-{% set pageTitle = "Is this the address registered with your GP?" %}
+{% set pageTitle = "Is this the address registered with Joe Smith's GP?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
 
-    <form action="/gp-address" class="form" method="post">
+    <form action="/gp-address-someone" class="form" method="post">
 
         {% set titles %}
             <h1 class="govuk-heading-l">
@@ -16,8 +16,8 @@
 
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
-            idPrefix: "confirmGpAddress",
-            name: "confirmGpAddress",
+            idPrefix: "confirmGpAddress-other",
+            name: "confirmGpAddress-other",
             fieldset: {
                 legend: {
                     html: titles
@@ -26,8 +26,8 @@
             hint: {
                 html: "
                 <p></p>
-                <p class='govuk-body'>This will help us find and update your GP record with your test result.</p>
-                <p class='govuk-body govuk-!-font-weight-bold'>If you do not live in the UK, or you're not registered with your GP (family doctor) in the UK, select 'I do not know'.</p>"
+                <p class='govuk-body'>This will help us find and update their GP record with their test result.</p>
+                <p class='govuk-body govuk-!-font-weight-bold'>If they do not live in the UK, or they're not registered with their GP (family doctor) in the UK, select 'I do not know'.</p>"
             },
             items: [
                 {

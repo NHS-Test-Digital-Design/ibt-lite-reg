@@ -1,0 +1,41 @@
+{% set pageTitle = "What is the name of the person taking the test?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form action="#" class="form" method="post">
+        {% call govukFieldset({
+            legend: {
+                text: pageTitle,
+                classes: "govuk-fieldset__legend--l",
+                isPageHeading: true
+            }
+        }) %}
+
+            {{ govukInput({
+                id: "first-name",
+                name: "first-name",
+                classes: "govuk-!-width-one-half",
+                label: {
+                    text: "First name"
+                }
+            }) }}
+            {{ govukInput({
+                id: "last-name",
+                name: "last-name",
+                classes: "govuk-!-width-one-half",
+                label: {
+                    text: "Last name"
+                }
+            }) }}
+
+        {% endcall %}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "/register-kit/age-someone"
+        }) }}
+
+    </form>
+{% endblock %}
