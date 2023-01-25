@@ -34,7 +34,19 @@
                     text: "Email address"
                 }
             }) }}
-            
+
+            {{ govukInput({
+                id: "confirmemail",
+                name: "confirmemail",
+                classes: "govuk-!-width-one-half",
+                type: "email",
+                autocomplete: "confirmemail",
+                spellcheck: false,
+                label: {
+                    text: "Confirm email address"
+                }
+            }) }}
+
         {% endset %}
 
         {{ govukRadios({

@@ -34,6 +34,18 @@
           classes: "govuk-input--width-20"
           }) }}
 
+          {{ govukInput({
+          label: {
+            text: "Confirm mobile number"
+          },
+
+          id: "confirm-mobile-number",
+          name: "confirm-mobile-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+          }) }}
+
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
