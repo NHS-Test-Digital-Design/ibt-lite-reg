@@ -14,13 +14,12 @@
 
     <form action="/form-handler" method="post" novalidate>
       {{ govukInput({
-
-        hint: {
+        id: "home-postcode",
+        name: "home-postcode",
+        label: {
             text: "Postcode"
         },
         classes: "govuk-input--width-10",
-        id: "home-postcode",
-        name: "home-postcode",
         autocomplete: "postal-code"
       }) }}
 
