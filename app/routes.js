@@ -70,6 +70,16 @@ router.post('/education-place-answer', function (req, res) {
     }
 })
 
+// area-of-work.html routing
+router.post('/work-area-answer', function (req, res) {
+    var workArea = req.session.data['area-of-work']
+    if (workArea == "not-to-say"){
+        res.redirect('register-kit/symptoms')
+    } else {
+        res.redirect('/register-kit/work-details')
+    }
+})
+
 // symptoms.html routing
 router.post('/when-did-symptoms-start', function (req, res) {
     var symptomsStart = req.session.data['do-you-have-symptoms']
@@ -152,6 +162,16 @@ router.post('/education-place-answer-someone', function (req, res) {
         res.redirect('register-kit/symptoms-other')
     } else {
         res.redirect('register-kit/education-place-details-other')
+    }
+})
+
+// area-of-work-other.html routing
+router.post('/work-area-answer-other', function (req, res) {
+    var workArea = req.session.data['area-of-work-other']
+    if (workArea == "not-to-say"){
+        res.redirect('register-kit/symptoms-other')
+    } else {
+        res.redirect('/register-kit/work-details-other')
     }
 })
 
