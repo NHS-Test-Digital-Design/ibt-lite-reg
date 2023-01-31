@@ -38,7 +38,7 @@
 {{ govukButton({
     text: "Scan barcode",
     classes: "govuk-button--secondary",
-    href: "#"
+    href: "/register-kit/scan-RM-barcode-other"
 }) }}
 
 <form class="form" action="/registering-for-answer" method="post">
@@ -47,6 +47,7 @@
     {{ govukInput({
         id: "RMbarcodeRef",
         name: "RMbarcodeRef",
+        classes: "govuk-input govuk-!-width-two-thirds",
         label: {
             text: "Royal Mail barcode reference"
         }
@@ -54,6 +55,7 @@
     {{ govukInput({
         id: "confirmRMBarcodeRef",
         name: "confirmRMBarcodeRef",
+        classes: "govuk-input govuk-!-width-two-thirds",
         label: {
             text: "Confirm Royal Mail barcode reference "
         }
