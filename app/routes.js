@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/registering-for-answer', function (req, res) {
     var whoFor = req.session.data['registering-for']
     if (whoFor == "someone-else"){
-        res.redirect('register-kit/login-choice-someone')
+        res.redirect('register-kit/#')
     } else {
         res.redirect('register-kit/login-choice')
     }
