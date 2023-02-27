@@ -11,28 +11,20 @@
       Based on the test kit barcode you entered, it looks like you need to report your result.
     </p>
 
-    <div>
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  How to report your result
-                </legend>
-              </fieldset>
-    </div>
+    <h2 class="govuk-heading-m">
+      How to report your result
+    </h2>
 
     <p class="govuk-body">
       Usually, you report your own result after doing a lateral flow test and reading the result yourself. Your result is displayed on a handled device that comes with the test.
     </p>
 
+    {# https://design-system.service.gov.uk/components/button/ #}
+    {{ govukButton({
+        text: "Report test result",
+        classes: "govuk-!-margin-top-4",
+        href: "#"
+    }) }}
 
-    <form class="form" action="#" method="post">
-
-      {# https://design-system.service.gov.uk/components/button/ #}
-        {{ govukButton({
-            text: "Report test result",
-            classes: "govuk-!-margin-top-4",
-            href: "#"
-        }) }}
-
-    </form>
 
 {% endblock %}
