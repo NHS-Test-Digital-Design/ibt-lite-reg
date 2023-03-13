@@ -292,6 +292,23 @@
             {{ govukSummaryList({
                 classes: "govuk-!-margin-bottom-9",
                 rows: [
+                     {
+                key: {
+                    text: "Do you have any symptoms? "
+                },
+                value: {
+                    text: "No"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "do you have any symptoms?"
+                        }
+                    ]
+                }
+            },
                     {
                         key: {
                             text: "Positive coronavirus test "
