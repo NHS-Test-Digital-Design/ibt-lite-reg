@@ -17,7 +17,7 @@ router.post('/registering-for-answer', function (req, res) {
 router.post('/overseas-answer', function (req, res) {
     var travelWhere = req.session.data['travel-overseas']
     if (travelWhere == "no"){
-        res.redirect('register-kit/test-location')
+        res.redirect('register-kit/royal-mail-barcode')
     } else {
         res.redirect('register-kit/travel-country')
     }
