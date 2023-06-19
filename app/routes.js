@@ -111,7 +111,7 @@ router.post('/gp-address', function (req, res) {
 router.post('/overseas-answer-someone', function (req, res) {
     var travelWhere = req.session.data['travel-overseas-other']
     if (travelWhere == "no"){
-        res.redirect('register-kit/test-location-other')
+        res.redirect('register-kit/royal-mail-barcode')
     } else {
         res.redirect('register-kit/travel-country-other')
     }
