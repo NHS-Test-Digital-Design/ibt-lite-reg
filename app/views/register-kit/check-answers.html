@@ -49,62 +49,7 @@
                         }
                     ]
                 }
-            },
-
-            {
-                key: {
-                    text: "Test taken at test site"
-                },
-                value: {
-                    text: "Yes"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "Change test taken at test site"
-                        }
-                    ]
-                }
-            },
-
-            {
-                key: {
-                    text: "Test site"
-                },
-                value: {
-                    text: "The Grand"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "Change test site"
-                        }
-                    ]
-                }
-            },
-
-            {
-                key: {
-                    text: "Test date and time"
-                },
-                value: {
-                    text: "10 Dec 2022"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "Change test date and time"
-                        }
-                    ]
-                }
             }
-
 
         ]
     }) }}
@@ -278,19 +223,6 @@
     }) }}
 
     <h2 class="govuk-heading-m">
-        Declaration
-    </h2> 
-
-    <p class="govuk-body">
-        Please make sure you have read and understood the participant information leaflet.
-    </p>
-
-    <p class="govuk-body">
-        By returning the test kit, you agree to your information and sample being used by the UK Health Security Agency (UKHSA) to understand more about the effectiveness of COVID-19 tests and treatments.
-    </p>
-
-
-    <h2 class="govuk-heading-m">
         Employment and education
     </h2>
     {{ govukSummaryList({
@@ -399,6 +331,17 @@
         ]
     }) }}
 
+    <h2 class="govuk-heading-m">
+        Declaration
+    </h2>
+
+    <p class="govuk-body">
+        Please make sure you have read and understood the participant information leaflet.
+    </p>
+
+    <p class="govuk-body">
+        By returning the test kit, you agree to your information and sample being used by the UK Health Security Agency (UKHSA) to understand more about the effectiveness of COVID-19 tests and treatments.
+    </p>
 
     {# https://design-system.service.gov.uk/components/button/ #}
     {{ govukButton({
